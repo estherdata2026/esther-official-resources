@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📚 产品说明书 | Product Manual
+    url: https://github.com/estherdata2026/esther-official-resources/blob/main/docs/product-manual.zh-CN.md
+    about: 使用前请先阅读产品说明书（含常见问题）| Please read the manual (incl. FAQ) before opening an issue

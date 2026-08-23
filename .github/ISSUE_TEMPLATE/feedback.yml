@@ -1,0 +1,38 @@
+name: "💡 功能建议 / 反馈"
+description: "希望支持的新方言、新能力，或文档改进建议"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎告诉我们你的使用场景和期望，这会直接影响后续版本的优先级排序。
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: 反馈类型
+      options:
+        - 新方言支持
+        - 血缘分析能力增强（新语句类型 / 新边类型等）
+        - Web UI 交互改进
+        - API / CLI 改进
+        - 文档改进
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 你的使用场景
+      description: 你在做什么时遇到了这个需求？例如“我们数仓大量使用某方言的存储过程，希望解析支持 XXX 语法”
+    validations:
+      required: true
+
+  - type: textarea
+    id: expectation
+    attributes:
+      label: 期望的能力 / 改进
+      description: 具体描述你希望产品做成什么样；如有示例 SQL 或期望的图谱效果，请一并提供
+    validations:
+      required: true

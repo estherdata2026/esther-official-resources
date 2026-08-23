@@ -1,0 +1,125 @@
+name: "🐛 Bug 反馈"
+description: "产品使用问题、血缘分析结果不正确等"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！为了尽快定位问题，请尽量完整填写以下信息（尤其 **SQL 原文** 和 **期望 vs 实际**）。
+        保密提示：SQL 可做脱敏，但请保持结构（表名/列名/语句形态）不变，否则无法复现。
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: 问题类型
+      options:
+        - 血缘分析结果不正确（多边/少边/方向错误等）
+        - SQL 解析失败（PARSE_ERROR / RESOLVE_ERROR）
+        - 警告提示不理解（DYNAMIC_SQL / GOTO_UNCERTAINTY 等）
+        - Web UI 显示或交互问题
+        - 部署 / 启动问题
+        - 授权（License）问题
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 产品版本
+      description: 运行 `esther-cli.exe license status` 查看，或粘贴服务启动日志首行（如 0.10.0-preview）
+      placeholder: "0.10.0-preview"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: trigger
+    attributes:
+      label: 触发方式
+      options:
+        - Web UI（数据血缘分析页）
+        - REST API（POST /api/analyze 或 /api/v1/lineage）
+        - CLI（esther-cli.exe）
+        - 元数据采集任务
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dialect
+    attributes:
+      label: SQL 方言
+      description: 不确定时可留空，或在下面 SQL 中说明
+      options:
+        - 自动检测（auto）
+        - mysql / mariadb / tidb
+        - postgres / opengauss
+        - oracle
+        - tsql（SQL Server）
+        - dameng（达梦）
+        - kingbase（人大金仓）
+        - oscar（神通）
+        - highgo（瀚高）
+        - gbase
+        - oceanbase（MySQL 模式）
+        - oceanbase_oracle（Oracle 模式）
+        - gaussdb
+        - db2
+        - hana（SAP HANA）
+        - sybase
+        - informix
+        - teradata
+        - sqlite
+        - clickhouse
+        - snowflake
+        - bigquery
+        - presto / trino
+        - hive
+        - spark / databricks
+        - redshift
+        - doris
+        - starrocks
+        - duckdb
+        - 其他 / 不确定
+
+  - type: textarea
+    id: sql
+    attributes:
+      label: SQL 原文
+      description: 请粘贴完整 SQL（可含多条语句、DDL、存储过程）；可脱敏但请保持结构
+      render: sql
+      placeholder: |
+        INSERT INTO report (id, total)
+        SELECT order_id, price * qty FROM orders;
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+      description: 你认为正确的血缘关系是什么？例如“orders.price 应有一条 TRANSFORM 边连到 report.total”
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 产品给出的结果；可粘贴 JSON 标签页内容或截图
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开数据血缘页面
+        2. 粘贴 SQL，方言选择 mysql
+        3. 点击分析……
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图（可选）
+      description: 血缘图 / 警告面板 / 控制台报错截图，可直接拖入
