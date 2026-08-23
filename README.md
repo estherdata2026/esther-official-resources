@@ -1,6 +1,6 @@
 # Esther · 数据血缘分析平台
 
-**English** | 简体中文
+[English](README.en.md) | **简体中文**
 
 **The Wise Guardian of Your Data | 您的数据智慧管家**
 

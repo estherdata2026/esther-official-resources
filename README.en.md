@@ -1,6 +1,6 @@
 # Esther · SQL Data Lineage Analysis Platform
 
-English | **简体中文**
+**English** | [简体中文](README.md)
 
 **The Wise Guardian of Your Data**
 
