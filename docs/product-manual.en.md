@@ -65,7 +65,7 @@
 
 ### 2.1 Deploy in three steps (Windows preview build)
 
-1. Download the zip package from [Releases](https://github.com/estherdata2026/esther-official-resources/releases) and extract it anywhere on the target server (portable, no installer).
+1. Download the zip package from [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) or [Gitee releases](https://gitee.com/esther2026/esther-official-resources/releases) and extract it anywhere on the target server (portable, no installer).
 2. Double-click `start_esther.bat` to start the server.
 3. Open `http://<server-ip>:8000` in your browser.
 
@@ -76,7 +76,7 @@
 - **Trial mode**: the first run starts with a built-in trial period; all features are available until it expires.
 - **Activating a license**:
   1. Run `esther-cli.exe license fingerprint` to get the machine fingerprint;
-  2. Send the fingerprint to the vendor to receive the license file `esther.lic`;
+  2. Email the fingerprint to [estherdata@163.com](mailto:estherdata@163.com) to receive the license file `esther.lic`;
   3. Place `esther.lic` in the program directory and restart — the server enters registered mode.
 - **Checking status**: `esther-cli.exe license status`.
 
@@ -534,12 +534,12 @@ A: The analysis page is an ad-hoc sandbox and does not persist. Use ingestion pi
 
 ## 9. Getting Help
 
-- **Bug reports / feature requests**: open an [issue](https://github.com/estherdata2026/esther-official-resources/issues) using a template. To speed up diagnosis, please include:
+- **Bug reports / feature requests**: open an issue on [GitHub Issues](https://github.com/estherdata2026/esther-official-resources/issues) (please use a template) or [Gitee Issues](https://gitee.com/esther2026/esther-official-resources/issues). To speed up diagnosis, please include:
   1. The **original SQL** (complete statements; anonymize values but keep the structure)
   2. The dialect ID
   3. Expected vs. actual lineage (screenshot or JSON)
   4. Your version (from `esther-cli.exe license status` or the startup log)
-- **Licensing & business**: reach out via an issue or contact the publisher.
+- **Licensing & business**: email [estherdata@163.com](mailto:estherdata@163.com), or leave a message via an issue.
 
 ---
 

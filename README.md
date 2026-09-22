@@ -12,11 +12,12 @@
 
 | 内容 | 链接 |
 |------|------|
-| 📦 下载试用版 | [Releases 发布页](https://github.com/estherdata2026/esther-official-resources/releases) |
+| 📦 下载试用版 | [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) · [Gitee 发行版](https://gitee.com/esther2026/esther-official-resources/releases) |
 | 📚 产品说明书（中文） | [docs/product-manual.zh-CN.md](docs/product-manual.zh-CN.md) |
 | 📚 产品说明书（英文） | [docs/product-manual.en.md](docs/product-manual.en.md) |
-| 🐛 提交 Bug 反馈 | [Issues](https://github.com/estherdata2026/esther-official-resources/issues)（请选择问题模板） |
-| 💡 功能建议 | [Issues](https://github.com/estherdata2026/esther-official-resources/issues) |
+| 🐛 提交 Bug 反馈 | [GitHub Issues](https://github.com/estherdata2026/esther-official-resources/issues)（请选择问题模板） · [Gitee Issues](https://gitee.com/esther2026/esther-official-resources/issues) |
+| 💡 功能建议 | [GitHub Issues](https://github.com/estherdata2026/esther-official-resources/issues) · [Gitee Issues](https://gitee.com/esther2026/esther-official-resources/issues) |
+| 📮 联系我们 | [estherdata@163.com](mailto:estherdata@163.com)（商务合作 / 授权咨询） |
 
 > **说明**：本仓库仅发布试用程序与产品文档，产品源代码不在本仓库中。
 
@@ -34,7 +35,7 @@
 
 - 首次打开"数据血缘"页面时，系统会自动运行一段演示 SQL 并渲染血缘图谱，开箱即可体验。
 - 修改端口：设置环境变量 `ESTHER_PORT` 后重启。
-- 试用期到期后，运行 `esther-cli.exe license fingerprint` 获取本机指纹，联系我们换取授权文件 `esther.lic`。
+- 试用期到期后，运行 `esther-cli.exe license fingerprint` 获取本机指纹，发送至 [estherdata@163.com](mailto:estherdata@163.com) 换取授权文件 `esther.lic`。
 
 完整部署、授权与功能说明见[产品说明书](docs/product-manual.zh-CN.md)。
 
@@ -67,8 +68,8 @@ esther-official-resources/
 
 ## 支持与反馈
 
-- 使用问题与 Bug：请提交 [Issue](https://github.com/estherdata2026/esther-official-resources/issues)，并按模板填写**SQL 文本、方言、期望结果与实际结果**，以便快速定位。
-- 商务与授权咨询：请通过 Issue 留言或联系发布方。
+- 使用问题与 Bug：请提交 Issue（[GitHub](https://github.com/estherdata2026/esther-official-resources/issues) / [Gitee](https://gitee.com/esther2026/esther-official-resources/issues)），并尽量填写**SQL 文本、方言、期望结果与实际结果**，以便快速定位。
+- 商务与授权咨询：欢迎联系 📮 [estherdata@163.com](mailto:estherdata@163.com)，或通过 Issue 留言。
 
 ---
 

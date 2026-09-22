@@ -65,7 +65,7 @@
 
 ### 2.1 部署三步（Windows 预览版）
 
-1. 从 [Releases](https://github.com/estherdata2026/esther-official-resources/releases) 下载 zip 压缩包，解压到目标服务器任意目录（绿色免安装）。
+1. 从 [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) 或 [Gitee 发行版](https://gitee.com/esther2026/esther-official-resources/releases) 下载 zip 压缩包，解压到目标服务器任意目录（绿色免安装）。
 2. 双击 `start_esther.bat`（或命令行运行）启动服务。
 3. 浏览器打开 `http://<服务器IP>:8000` 即可使用。
 
@@ -76,7 +76,7 @@
 - **试用模式**：首次运行自带试用期，试用期内功能完整，到期后服务停止。
 - **转正式授权**：
   1. 命令行执行 `esther-cli.exe license fingerprint`，获取本机指纹；
-  2. 将指纹发送给厂商，换取授权文件 `esther.lic`；
+  2. 将指纹发送至邮箱 [estherdata@163.com](mailto:estherdata@163.com)，换取授权文件 `esther.lic`；
   3. 将 `esther.lic` 放到程序目录，重启服务即进入注册模式。
 - **查看授权状态**：`esther-cli.exe license status`。
 
@@ -535,12 +535,12 @@ A：分析页是即席沙箱，不持久化。需要长期保存、跨对象溯�
 
 ## 9. 获取帮助
 
-- **Bug 反馈 / 功能建议**：请到 [Issues](https://github.com/estherdata2026/esther-official-resources/issues) 按模板提交。为了快速定位问题，请尽量提供：
+- **Bug 反馈 / 功能建议**：请到 [GitHub Issues](https://github.com/estherdata2026/esther-official-resources/issues)（请选择问题模板）或 [Gitee Issues](https://gitee.com/esther2026/esther-official-resources/issues) 提交。为了快速定位问题，请尽量提供：
   1. SQL **原文**（完整语句，可脱敏但请保持结构）
   2. 方言标识
   3. 期望的血缘结果 vs 实际结果（截图或 JSON）
   4. 版本号（`esther-cli.exe license status` 或启动日志中查看）
-- **授权与商务**：请通过 Issue 留言或联系发布方。
+- **授权与商务**：欢迎联系邮箱 [estherdata@163.com](mailto:estherdata@163.com)，也可通过 Issue 留言。
 
 ---
 
