@@ -4,7 +4,7 @@
 
 **The Wise Guardian of Your Data**
 
-**Esther** is an enterprise SQL data lineage analysis platform. It extracts **column-level** data flow relationships directly from SQL text, supports 28 SQL dialects (including Chinese domestic databases such as Dameng, Kingbase and OceanBase), and provides an interactive lineage graph with upstream tracing and downstream impact analysis.
+**Esther** is an enterprise SQL data lineage analysis platform. It extracts **column-level** data flow relationships directly from SQL text, supports 27 SQL dialects (including Chinese domestic databases such as Dameng, Kingbase, OceanBase and GaussDB), and provides an interactive lineage graph with direction/depth/type-filter/endpoint lineage queries, upstream tracing and downstream impact analysis.
 
 ---
 
@@ -33,6 +33,7 @@ Deploy in three steps (Windows preview build):
 3. Open http://localhost:8000 in your browser
 ```
 
+- On first startup an administrator account **admin** (initial password admin123) is created automatically — keep it safe after signing in.
 - On first visit to the lineage page, a demo SQL is analyzed automatically so you can see the lineage graph immediately.
 - To change the port, set the `ESTHER_PORT` environment variable and restart.
 - When the trial expires, run `esther-cli.exe license fingerprint` and email the fingerprint to [estherdata@163.com](mailto:estherdata@163.com) to obtain a license file (`esther.lic`).
@@ -44,8 +45,10 @@ See the [product manual](docs/product-manual.en.md) for full deployment, licensi
 ## Key Capabilities
 
 - **Column-level lineage** — field-level data flow tracking with 9 edge types: direct, transform, aggregation, filter, join and more.
-- **28 SQL dialects** — covers mainstream databases (MySQL, PostgreSQL, Oracle, SQL Server, …) and Chinese domestic databases (Dameng, Kingbase, Oscar, HighGo, GBase, OceanBase, …), with automatic dialect detection.
+- **27 SQL dialects** — covers mainstream databases (MySQL, PostgreSQL, Oracle, SQL Server, …) and Chinese domestic databases (Dameng, Kingbase, Oscar, HighGo, GBase, OceanBase, GaussDB, …), with automatic dialect detection.
+- **Interactive lineage queries** — server-side traversal by direction / depth / type filters / endpoint tracing; one-click table-level vs. column-level views; full-path highlighting on selection; a spreadsheet "Table" view with filtering, sorting, pagination and CSV export.
 - **Deep procedure parsing** — PL/SQL, PL/pgSQL, T-SQL and MySQL procedures, including local variables, cursors, control flow (IF/LOOP), triggers (NEW/OLD) and cross-procedure calls.
+- **Metadata extraction pipelines** — dual sources (data source connections + SQL script packages); diff-based merging automatically adds, updates and removes assets (dropped source tables leave no residue); run logs, error summaries and lineage snapshots.
 - **Impact analysis** — graph-backed upstream tracing and downstream impact queries: find out which reports a column change would affect.
 - **Three ways to use** — Web UI, REST API (with Swagger docs) and command-line CLI.
 
