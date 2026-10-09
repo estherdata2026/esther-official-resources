@@ -66,28 +66,31 @@
 
 ## 2. Installation & Licensing
 
-### 2.1 Deploy in three steps (Windows preview build)
+### 2.1 Deploy in four steps (Windows preview build)
 
 1. Download the zip package from [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) or [Gitee releases](https://gitee.com/esther2026/esther-official-resources/releases) and extract it anywhere on the target server (portable, no installer).
-2. Double-click `start_esther.bat` to start the server.
-3. Open `http://<server-ip>:8000` in your browser and sign in with the administrator account.
+2. **Request a free license** (see [2.2](#22-licensing)): run `esther-cli.exe license fingerprint` to get the machine fingerprint, email it to receive the free 3-month license file `esther.lic`, and place the file in the program directory.
+3. Double-click `start_esther.bat` to start the server.
+4. Open `http://<server-ip>:8000` in your browser and sign in with the administrator account.
+
+> Starting without a license exits immediately with instructions to obtain a machine fingerprint and request a license — this is expected; complete the request flow in [2.2](#22-licensing) first.
 
 **Changing the port**: set the `ESTHER_PORT` environment variable and restart.
 
 ### 2.2 Licensing
 
-- **Trial mode**: the first run starts a trial period (90 days by default); all features are available during the trial, and the server stops starting once it expires. Remaining days are shown anytime by `esther-cli.exe license status`.
-- **Activating a license**:
-  1. Run `esther-cli.exe license fingerprint` to get the machine fingerprint;
-  2. Email the fingerprint to [estherdata@163.com](mailto:estherdata@163.com) to receive the license file `esther.lic`;
-  3. Place `esther.lic` in the program directory and restart — the server enters registered mode.
-- **Checking status**: `esther-cli.exe license status`.
+- **A valid license is required to start**: request a license file (`esther.lic`) before deployment; without one the server will not start.
+- **Request a free license**: new users can apply for a **free 3-month license**:
+  1. Run `esther-cli.exe license fingerprint` to get the machine fingerprint (64 hex characters);
+  2. Email the fingerprint to [estherdata@163.com](mailto:estherdata@163.com) to receive the license file `esther.lic` (free for 3 months);
+  3. Place `esther.lic` in the program directory and run `start_esther.bat`.
+- **Checking status**: `esther-cli.exe license status` (mode / expiry / days left).
+- **Expiry & migration**: once a license expires the server stops starting — request a new one the same way; licenses are bound to the machine fingerprint, so migrating to another server requires a new license.
 
 ### 2.3 Runtime data & accounts
 
 - Runtime data is created automatically under `data/` (SQLite + Kuzu graph database) — no external database required.
 - On first startup an administrator account **admin** (initial password **admin123**) is created automatically — keep it safe after signing in.
-- Licenses are bound to the machine fingerprint; migrating servers requires a new license.
 
 ### 2.4 Security notes
 
@@ -601,7 +604,7 @@ esther-cli.exe license fingerprint  # Print the machine fingerprint
 | `0` | Success |
 | `1` | Success with parse warnings; also returned when `license status` detects a blocked license |
 | `2` | Error (unknown dialect / missing file / bad format) |
-| `3` | License blocked (trial expired or unlicensed) |
+| `3` | License blocked (unlicensed or expired) |
 
 ---
 

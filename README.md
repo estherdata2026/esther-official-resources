@@ -12,31 +12,33 @@
 
 | 内容 | 链接 |
 |------|------|
-| 📦 下载试用版 | [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) · [Gitee 发行版](https://gitee.com/esther2026/esther-official-resources/releases) |
+| 📦 下载安装包 | [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) · [Gitee 发行版](https://gitee.com/esther2026/esther-official-resources/releases) |
 | 📚 产品说明书（中文） | [docs/product-manual.zh-CN.md](docs/product-manual.zh-CN.md) |
 | 📚 产品说明书（英文） | [docs/product-manual.en.md](docs/product-manual.en.md) |
 | 🐛 提交 Bug 反馈 | [GitHub Issues](https://github.com/estherdata2026/esther-official-resources/issues)（请选择问题模板） · [Gitee Issues](https://gitee.com/esther2026/esther-official-resources/issues) |
 | 💡 功能建议 | [GitHub Issues](https://github.com/estherdata2026/esther-official-resources/issues) · [Gitee Issues](https://gitee.com/esther2026/esther-official-resources/issues) |
 | 📮 联系我们 | [estherdata@163.com](mailto:estherdata@163.com)（商务合作 / 授权咨询） |
 
-> **说明**：本仓库仅发布试用程序与产品文档，产品源代码不在本仓库中。
+> **说明**：本仓库仅发布程序安装包与产品文档，产品源代码不在本仓库中。
 
 ---
 
-## 试用版快速上手
+## 快速上手
 
-三步即可完成部署（Windows 预览版）：
+四步即可完成部署（Windows 预览版）：
 
 ```text
 1. 从 Releases 页面下载 zip 压缩包，解压到任意目录
-2. 双击 start_esther.bat 启动服务
-3. 浏览器打开 http://localhost:8000
+2. 申请免费授权（3 个月）：运行 esther-cli.exe license fingerprint 获取本机指纹，
+   发送至邮箱换取授权文件 esther.lic，放入程序目录
+3. 双击 start_esther.bat 启动服务
+4. 浏览器打开 http://localhost:8000，使用管理员账号登录
 ```
 
+- 启动需要有效授权；新用户可申请**免费 3 个月**的 license，授权与机器绑定，换服务器 / 换机器需重新申请。
 - 首次启动自动创建管理员账号 **admin**（初始密码 admin123），登录后请妥善保管。
 - 首次打开"数据血缘"页面时，系统会自动运行一段演示 SQL 并渲染血缘图谱，开箱即可体验。
 - 修改端口：设置环境变量 `ESTHER_PORT` 后重启。
-- 试用期到期后，运行 `esther-cli.exe license fingerprint` 获取本机指纹，发送至 [estherdata@163.com](mailto:estherdata@163.com) 换取授权文件 `esther.lic`。
 
 完整部署、授权与功能说明见[产品说明书](docs/product-manual.zh-CN.md)。
 

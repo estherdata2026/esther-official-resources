@@ -66,28 +66,31 @@
 
 ## 2. 安装与授权
 
-### 2.1 部署三步（Windows 预览版）
+### 2.1 部署四步（Windows 预览版）
 
 1. 从 [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) 或 [Gitee 发行版](https://gitee.com/esther2026/esther-official-resources/releases) 下载 zip 压缩包，解压到目标服务器任意目录（绿色免安装）。
-2. 双击 `start_esther.bat`（或命令行运行）启动服务。
-3. 浏览器打开 `http://<服务器IP>:8000`，使用管理员账号登录即可使用。
+2. **申请免费授权**（见 [2.2](#22-授权license)）：命令行执行 `esther-cli.exe license fingerprint` 获取本机指纹，发送至邮箱换取免费 3 个月的授权文件 `esther.lic`，放入程序目录。
+3. 双击 `start_esther.bat`（或命令行运行）启动服务。
+4. 浏览器打开 `http://<服务器IP>:8000`，使用管理员账号登录即可使用。
+
+> 未完成授权时启动服务会直接退出，并提示获取机器指纹、联系厂商申请授权——这是预期行为，完成 [2.2](#22-授权license) 的申请流程后再启动即可。
 
 **修改端口**：设置环境变量 `ESTHER_PORT` 后重启服务。
 
 ### 2.2 授权（License）
 
-- **试用模式**：首次运行自动进入试用期（默认 90 天），试用期内功能完整，到期后服务停止启动。剩余天数可随时通过 `esther-cli.exe license status` 查看。
-- **转正式授权**：
-  1. 命令行执行 `esther-cli.exe license fingerprint`，获取本机指纹；
-  2. 将指纹发送至邮箱 [estherdata@163.com](mailto:estherdata@163.com)，换取授权文件 `esther.lic`；
-  3. 将 `esther.lic` 放到程序目录，重启服务即进入注册模式。
-- **查看授权状态**：`esther-cli.exe license status`。
+- **启动需要有效授权**：首次部署需申请授权文件 `esther.lic`；未检测到有效授权时服务不会启动。
+- **申请免费授权**：新用户可申请**免费 3 个月**的 license：
+  1. 命令行执行 `esther-cli.exe license fingerprint`，获取本机指纹（64 位）；
+  2. 将指纹发送至邮箱 [estherdata@163.com](mailto:estherdata@163.com)，换取授权文件 `esther.lic`（免费有效期 3 个月）；
+  3. 将 `esther.lic` 放到程序目录，运行 `start_esther.bat` 即可正常启动。
+- **查看授权状态**：`esther-cli.exe license status`（授权模式 / 有效期 / 剩余天数）。
+- **到期与换机**：授权到期后服务停止启动，按上述流程重新申请即可；授权与机器指纹绑定，换服务器 / 换机器需要重新申请。
 
 ### 2.3 运行数据与账号
 
 - 运行时数据自动创建在程序目录的 `data/` 下（SQLite + Kuzu 图数据库），无需额外安装数据库。
 - 首次启动会自动创建管理员账号 **admin**（初始密码 **admin123**），请登录后妥善保管。
-- 换服务器 / 换机器需要重新申请授权（指纹与机器绑定）。
 
 ### 2.4 安全提示
 
@@ -602,7 +605,7 @@ esther-cli.exe license fingerprint  # 输出本机授权指纹
 | `0` | 成功 |
 | `1` | 分析成功但有解析警告；`license status` 检测到授权被拦截时同样返回 |
 | `2` | 错误（方言不存在 / 文件缺失 / 格式错误等） |
-| `3` | 授权拦截（试用期到期或未授权） |
+| `3` | 授权拦截（未授权或授权已过期） |
 
 ---
 

@@ -12,31 +12,33 @@
 
 | What | Link |
 |------|------|
-| 📦 Download the trial build | [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) · [Gitee releases](https://gitee.com/esther2026/esther-official-resources/releases) |
+| 📦 Download the build | [GitHub Releases](https://github.com/estherdata2026/esther-official-resources/releases) · [Gitee releases](https://gitee.com/esther2026/esther-official-resources/releases) |
 | 📚 Product manual (Chinese) | [docs/product-manual.zh-CN.md](docs/product-manual.zh-CN.md) |
 | 📚 Product manual (English) | [docs/product-manual.en.md](docs/product-manual.en.md) |
 | 🐛 Report a bug | [GitHub Issues](https://github.com/estherdata2026/esther-official-resources/issues) (please use an issue template) · [Gitee Issues](https://gitee.com/esther2026/esther-official-resources/issues) |
 | 💡 Feature requests | [GitHub Issues](https://github.com/estherdata2026/esther-official-resources/issues) · [Gitee Issues](https://gitee.com/esther2026/esther-official-resources/issues) |
 | 📮 Contact us | [estherdata@163.com](mailto:estherdata@163.com) (business / licensing) |
 
-> **Note**: this repository distributes trial builds and product documentation only. Product source code is not hosted here.
+> **Note**: this repository distributes program builds and product documentation only. Product source code is not hosted here.
 
 ---
 
-## Trial Quick Start
+## Quick Start
 
-Deploy in three steps (Windows preview build):
+Deploy in four steps (Windows preview build):
 
 ```text
 1. Download the zip package from Releases and extract it anywhere
-2. Double-click start_esther.bat to start the server
-3. Open http://localhost:8000 in your browser
+2. Request a free license (3 months): run esther-cli.exe license fingerprint, email
+   the fingerprint to receive the esther.lic file, and place it in the program directory
+3. Double-click start_esther.bat to start the server
+4. Open http://localhost:8000 in your browser and sign in
 ```
 
+- A valid license is required to start the server; new users can apply for a **free 3-month license**. Licenses are machine-bound — request a new one when migrating to another server.
 - On first startup an administrator account **admin** (initial password admin123) is created automatically — keep it safe after signing in.
 - On first visit to the lineage page, a demo SQL is analyzed automatically so you can see the lineage graph immediately.
 - To change the port, set the `ESTHER_PORT` environment variable and restart.
-- When the trial expires, run `esther-cli.exe license fingerprint` and email the fingerprint to [estherdata@163.com](mailto:estherdata@163.com) to obtain a license file (`esther.lic`).
 
 See the [product manual](docs/product-manual.en.md) for full deployment, licensing and feature documentation.
 
