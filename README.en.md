@@ -4,7 +4,17 @@
 
 **The Wise Guardian of Your Data**
 
-**Esther** is an enterprise SQL data lineage analysis platform. It extracts **column-level** data flow relationships directly from SQL text, supports 27 SQL dialects (including Chinese domestic databases such as Dameng, Kingbase, OceanBase and GaussDB), and provides an interactive lineage graph with direction/depth/type-filter/endpoint lineage queries, upstream tracing and downstream impact analysis.
+**Esther** is an enterprise SQL data lineage analysis platform. It extracts **column-level** data flow relationships directly from SQL text, supports 30 SQL dialects (including Chinese domestic databases such as Dameng, Kingbase, OceanBase and GaussDB), and provides an interactive lineage graph with direction/depth/type-filter/endpoint lineage queries, upstream tracing and downstream impact analysis. It can also parse job files from ETL tools such as **Kettle, SSIS, DataX, Informatica and dbt**, and ships with an AI assistant, a built-in MCP server and a data quality engine.
+
+---
+
+## 🆕 What's New (v0.15)
+
+- **ETL tool lineage** — beyond SQL text: upload Kettle (.ktr/.kjb), SSIS (.dtsx), DataX (JSON), Informatica PowerCenter (XML) or dbt job files and get **column-level lineage inside ETL jobs** — which source tables flow through which transformation steps into which targets. Fully regression-tested against 355 real jobs from the official Kettle sample repository.
+- **AI assistant** — a built-in AI agent with pluggable model endpoints (OpenAI-compatible APIs, DeepSeek, Qwen, …) that answers questions about analysis results and performs **lineage diagnosis**, helping you quickly figure out why a column's lineage breaks.
+- **Built-in MCP server** — an MCP (Model Context Protocol) endpoint with token management, so AI clients such as Claude Desktop or Cursor can query column-level lineage directly through MCP and bring lineage into your AI workflow.
+- **Data quality engine** — built-in quality rules (accuracy, validity, …) bound to assets via policies, with scheduled runs, asynchronous execution and Webhook alerts; row-level sampling, reference dataset comparison and custom checks, compatible with 14+ dialects.
+- **Deep T-SQL enhancements** — a systematic overhaul for SQL Server procedures: all six EXEC forms, INSERT..EXEC, cursor lifecycles, TRY/CATCH, PIVOT/UNPIVOT, table-valued functions (TVF), SELECT INTO / temp tables and more now produce precise lineage.
 
 ---
 
@@ -47,12 +57,15 @@ See the [product manual](docs/product-manual.en.md) for full deployment, licensi
 ## Key Capabilities
 
 - **Column-level lineage** — field-level data flow tracking with 9 edge types: direct, transform, aggregation, filter, join and more.
-- **27 SQL dialects** — covers mainstream databases (MySQL, PostgreSQL, Oracle, SQL Server, …) and Chinese domestic databases (Dameng, Kingbase, Oscar, HighGo, GBase, OceanBase, GaussDB, …), with automatic dialect detection.
+- **30 SQL dialects** — covers mainstream databases (MySQL, PostgreSQL, Oracle, SQL Server, Snowflake, H2, …) and Chinese domestic databases (Dameng, Kingbase, Oscar, HighGo, GBase, OceanBase, GaussDB, …), with automatic dialect detection.
+- **ETL job parsing** — direct parsing of five ETL tool formats (Kettle, SSIS, DataX, Informatica PowerCenter, dbt); transformation steps and column-level lineage merged into one graph.
 - **Interactive lineage queries** — server-side traversal by direction / depth / type filters / endpoint tracing; one-click table-level vs. column-level views; full-path highlighting on selection; a spreadsheet "Table" view with filtering, sorting, pagination and CSV export.
-- **Deep procedure parsing** — PL/SQL, PL/pgSQL, T-SQL and MySQL procedures, including local variables, cursors, control flow (IF/LOOP), triggers (NEW/OLD) and cross-procedure calls.
+- **Deep procedure parsing** — PL/SQL, PL/pgSQL, T-SQL and MySQL procedures, including local variables, cursors, control flow (IF/LOOP), triggers (NEW/OLD) and cross-procedure calls; T-SQL keeps getting deep enhancements.
 - **Metadata extraction pipelines** — dual sources (data source connections + SQL script packages); diff-based merging automatically adds, updates and removes assets (dropped source tables leave no residue); run logs, error summaries and lineage snapshots.
 - **Impact analysis** — graph-backed upstream tracing and downstream impact queries: find out which reports a column change would affect.
-- **Three ways to use** — Web UI, REST API (with Swagger docs) and command-line CLI.
+- **Data quality engine** — quality rules bound to assets via policies, with scheduled runs, Webhook alerts, row-level sampling and reference dataset checks.
+- **AI assistant & MCP integration** — built-in AI Q&A / lineage diagnosis with pluggable models; a built-in MCP server for AI clients such as Claude and Cursor to query lineage directly.
+- **Three ways to use** — Web UI (with a built-in developer API docs portal), REST API (with Swagger docs) and command-line CLI.
 
 ---
 
